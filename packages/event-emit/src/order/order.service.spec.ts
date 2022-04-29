@@ -1,43 +1,50 @@
-import { EventEmitter2 } from '@nestjs/event-emitter';
-
 import { OrderService } from './order.service';
 import { OrderDto, OrderEntity } from './entity';
 
 describe('OrderService', () => {
-  let suite: jest.SpyInstance;
-  let emitter: EventEmitter2;
   let service: OrderService;
 
   beforeEach(async () => {
-    emitter = new EventEmitter2({
-      wildcard: true,
+    service = new OrderService();
+  });
+
+  it('findAll', () => {
+    service.findAll().subscribe((data) => {
+      expect(data.length).toEqual(3);
     });
-    suite = jest.spyOn(emitter, 'emit');
-    service = new OrderService(emitter);
   });
 
-  /**
-   * test the behavior of server
-   * side effect
-   *   - service._data
-   *   - event emit
-   */
+  it('findbById', () => {
+    service.findById(2).subscribe((data) => {
+      expect(data).toEqual({
+        id: 2,
+        name: 'b',
+        description: 'b',
+      });
+    });
+  });
+
   it('create', () => {
-    const dto = {
-      name: 'hello',
-      description: 'world',
-    } as OrderDto;
+    const dto: OrderDto = {
+      name: 'd',
+      description: 'd',
+    };
 
-    const order = {
-      id: 1,
+    const order: OrderEntity = {
       ...dto,
-    } as OrderEntity;
+      id: 4,
+    };
 
-    // behave
-    service.create(dto);
+    service.create(dto).subscribe((data) => {
+      expect(data).toEqual(order);
+    });
 
-    // expect
-    expect(service.findAll()).toEqual([order]);
-    expect(suite).toHaveBeenCalledWith('LOG.CREATE', order);
+    service.findAll().subscribe((data) => {
+      expect(data.length).toEqual(4);
+    });
   });
+
+  // it('update', () => {});
+
+  // it('update should revert', () => {});
 });
