@@ -19,16 +19,21 @@ describe('OrderController', () => {
     service = testModule.get<OrderService>(OrderService);
   });
 
-  it('findAll', async () => {
+  it('findAll()', async () => {
     const suite = jest.spyOn(service, 'findAll');
     controller.findAll();
     expect(suite).toHaveBeenCalled();
   });
 
-  it('create', async () => {
+  it('', async () => {
+    const suite = jest.spyOn(service, 'findById');
+    controller.findById('3');
+    expect(suite).toHaveBeenCalled();
+  });
+
+  it('create()', async () => {
     const suite = jest.spyOn(service, 'create');
     controller.create({ name: 'hello', description: 'world' });
-
     expect(suite).toHaveBeenCalled();
   });
 });

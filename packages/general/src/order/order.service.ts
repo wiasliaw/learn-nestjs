@@ -1,22 +1,5 @@
 import { Injectable, Scope } from '@nestjs/common';
-import {
-  Observable,
-  of,
-  tap,
-  map,
-  from,
-  filter,
-  partition,
-  merge,
-  toArray,
-  iif,
-  catchError,
-  throwError,
-  mergeMap,
-  NotFoundError,
-  mergeAll,
-  reduce,
-} from 'rxjs';
+import { Observable, of, tap, map, from, filter } from 'rxjs';
 
 import { OrderDto, OrderEntity } from './entity';
 
@@ -58,11 +41,4 @@ export class OrderService {
       tap((e) => this._data.push(e)),
     );
   }
-
-  // updateById(id: number, dto?: Partial<OrderDto>): Observable<OrderEntity> {
-  // }
-
-  // deleteById() {
-  //   this.eventEmitter.emit('LOG.DELETE');
-  // }
 }

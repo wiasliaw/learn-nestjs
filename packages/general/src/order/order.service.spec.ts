@@ -43,8 +43,4 @@ describe('OrderService', () => {
       expect(data.length).toEqual(4);
     });
   });
-
-  // it('update', () => {});
-
-  // it('update should revert', () => {});
 });
