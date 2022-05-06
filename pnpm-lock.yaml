@@ -13,7 +13,7 @@ importers:
       '@nestjs/cli': ^8.0.0
       '@nestjs/common': ^8.0.0
       '@nestjs/core': ^8.0.0
-      '@nestjs/event-emitter': ^1.1.0
+      '@nestjs/event-emitter': ^1.1.1
       '@nestjs/platform-express': ^8.0.0
       '@nestjs/schematics': ^8.0.0
       '@nestjs/testing': ^8.0.0
@@ -41,7 +41,7 @@ importers:
     dependencies:
       '@nestjs/common': 8.4.4_e7ea248743279784063e3708d703abc5
       '@nestjs/core': 8.4.4_b63c269346792a9d57cfab86d23050d2
-      '@nestjs/event-emitter': 1.1.0_8a3f4045e53a03a04c90c8adfa35dfce
+      '@nestjs/event-emitter': 1.1.1_8a3f4045e53a03a04c90c8adfa35dfce
       '@nestjs/platform-express': 8.4.4_a78378ec5f3cecc3c353ed91b578f3e6
       reflect-metadata: 0.1.13
       rimraf: 3.0.2
@@ -69,7 +69,7 @@ importers:
       tsconfig-paths: 3.14.1
       typescript: 4.6.2
 
-  packages/event-emit:
+  packages/general:
     specifiers:
       '@nestjs/cli': ^8.0.0
       '@nestjs/common': ^8.0.0
@@ -897,8 +897,8 @@ packages:
       - encoding
     dev: false
 
-  /@nestjs/event-emitter/1.1.0_8a3f4045e53a03a04c90c8adfa35dfce:
-    resolution: {integrity: sha512-wxQhrPtXSUSD2y7poyBdp0V2b7xD9jCkcenGVhllx3ILkctEYXyY+rAwwWGnDqDxnrN4/MKexkAQBHa2phsNRw==}
+  /@nestjs/event-emitter/1.1.1_8a3f4045e53a03a04c90c8adfa35dfce:
+    resolution: {integrity: sha512-fOcV1sjOSeLA6hj7c++Ga3pZG62BcmSKn5sAE/M0fYwuKn3T3Bx9BQm9siLTRLwSY/kJjwHbhTgfnL1bfEqY3w==}
     peerDependencies:
       '@nestjs/common': ^7.0.0 || ^8.0.0
       '@nestjs/core': ^7.0.0 || ^8.0.0
